@@ -1,8 +1,10 @@
 /**
- * Deze Klasse  
+ * This class allows details about a person to be entered and stored. 
+ * There are Getters and Setters to mutate and access details of the object
+ * There is a printDetails method to print all information about a person (object)
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author (Laurens op t Zandt, Joost van Woensel) 
+ * @version (11/21/2014)
  */
 public class Persoon
 {
@@ -188,8 +190,24 @@ public class Persoon
         return gender;
     }
     
-        /**
-     * 
+    /**
+     * This method turns a character (m or v) into the word Male or Female, this looks nicer when the details about the objects state are printed
+     */
+    public String charToStringGender(char gender)
+    {
+        String tempGender;
+        if(gender=='m'){
+            tempGender="Male";
+        }else if(gender=='v'){
+            tempGender="Female";
+        }else{
+            tempGender="Unknown";
+        }
+        return tempGender;
+    }
+    
+     /**
+     * This method prints all details about the objects state
      */
     public void printDetails()
     {
@@ -198,7 +216,7 @@ public class Persoon
         System.out.println("Last name: "+lastName);
         System.out.println("BSN: "+bsn);
         System.out.println("Birth Date: "+getBirthDay());
-        System.out.println("Gender: "+gender);
+        System.out.println("Gender: "+charToStringGender(gender));
         System.out.println("#######################################");
     }
 }

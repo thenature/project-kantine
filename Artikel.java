@@ -55,7 +55,7 @@ public class Artikel
     }
     
     /**
-     * 
+     * This method prints all details about the objects state
      */
     public void printDetails()
     {
