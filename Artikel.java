@@ -53,4 +53,15 @@ public class Artikel
     {
         return this.artikelPrice;
     }
+    
+    /**
+     * 
+     */
+    public void printDetails()
+    {
+        System.out.println("#######################################");
+        System.out.println("Article: "+artikelName);
+        System.out.println("Price: "+artikelPrice);
+        System.out.println("#######################################");
+    }
 }

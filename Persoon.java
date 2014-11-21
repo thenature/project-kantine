@@ -136,4 +136,69 @@ public class Persoon
         
         return correctDay;
     }
+    
+    /**
+     * Getter for Birth Day
+     * @return Birth Day
+     */
+    public String getBirthDay()
+    { 
+        String temp;
+        if (birthDay==0 && birthMonth==0 && birthYear==0) {
+            temp="Onbekend";
+        } else {
+            temp=birthDay+"/"+birthMonth+"/"+birthYear;
+        }
+        return temp;
+    }
+    
+     /**
+     * Getter for BSN number
+     * @return BSN number
+     */
+    public int getBsn()
+    { 
+        return bsn;
+    }
+    
+     /**
+     * Getter for First Name
+     * @return First Name
+     */
+    public String getFirstName()
+    { 
+        return firstName;
+    }
+    
+     /**
+     * Getter for Last Name
+     * @return Last Name
+     */
+    public String getLastName()
+    { 
+        return lastName;
+    }
+    
+    /**
+     * Getter for Gender
+     * @return Gender
+     */
+    public char getGender()
+    { 
+        return gender;
+    }
+    
+        /**
+     * 
+     */
+    public void printDetails()
+    {
+        System.out.println("#######################################");
+        System.out.println("First name: "+firstName);
+        System.out.println("Last name: "+lastName);
+        System.out.println("BSN: "+bsn);
+        System.out.println("Birth Date: "+getBirthDay());
+        System.out.println("Gender: "+gender);
+        System.out.println("#######################################");
+    }
 }
