@@ -16,35 +16,54 @@ public class Persoon
     private int birthMonth;
     private int birthYear;
     private char gender;
+    private Tray tray;
 
+    /**
+     * Constructor for objects of class Persoon
+     * It sets default values for all field variables. 
+     * Some of the variables are set via methods, this is to make sure the tests are made.
+     */
+    public Persoon(int birthDay, int birthMonth, int birthYear,String firstName ,String lastName, char gender, int bsn)
+    {
+        setBirthday(birthDay, birthMonth, birthYear);
+        this.gender = gender;
+        this.firstName=firstName;
+        this.lastName=lastName;
+        this.bsn = bsn;
+        this.tray = null;
+      
+    }
+    
     /**
      * Constructor for objects of class Persoon
      * It sets default values for all field variables. 
      * No meaningfull value is assigned here, this has to be done via the setters methods.
      */
-    public Persoon(int day, int month, int year,String newFirstName ,String newLastName, char newGender, int newBsn)
+    public Persoon()
     {
-        setBirthday(day, month, year);
-        setGender(newGender);
-        setFirstName(newFirstName);
-        setLastName(newLastName);
-        setBsn(newBsn);
-      
+        this.birthDay = 0;
+        this.birthMonth = 0;
+        this.birthYear = 0;
+        this.gender= '-';
+        this.firstName="";
+        this.lastName="";
+        this.bsn = 0;
+        this.tray = null;
     }
     
     /**
      * This method sets a birthday.
      * It performs tests to make sure the birthDay exists.
      */
-    public void setBirthday(int day, int month, int year)
+    public void setBirthday(int birthDay, int birthMonth, int birthYear)
     {
 
         //This if statement does two different things dependending on the outpout: bool. If bool is true, the client has entered a valid date, else 
         //the information wont be remembered and the birthday will be set to 0 - 0 - 0
-        if(isCorrectDay(day, month, year)){
-            this.birthDay = day;
-            this.birthMonth = month;
-            this.birthYear = year;
+        if(isCorrectDay(birthDay, birthMonth, birthYear)){
+            this.birthDay = birthDay;
+            this.birthMonth = birthMonth;
+            this.birthYear = birthYear;
         }else{
             this.birthDay = 0;
             this.birthMonth = 0;
@@ -56,40 +75,40 @@ public class Persoon
      * This method allows the user to set their gender. it takes a character, namely m or v
      * It has a check to make sure the character entered is valid.
      */
-    public void setGender(char newGender)
+    public void setGender(char gender)
     {
-       if(newGender!='m'&&newGender!='v')
+       if(gender!='m'&&gender!='v')
        {
            this.gender= '-';
            System.out.println("The gender character has to be a m or a v");
        }else
        {
-           this.gender=newGender;
+           this.gender = gender;
        }
     }
     
      /**
      * The setFirstName method allows the client to set their first name
      */
-    public void setFirstName(String newFirstName)
+    public void setFirstName(String firstName)
     {
-        this.firstName=newFirstName;
+        this.firstName=firstName;
     }
     
      /**
      * The setLastName method allows the client to set their last name
      */
-    public void setLastName(String newLastName)
+    public void setLastName(String lastName)
     {
-        this.lastName=newLastName;
+        this.lastName=lastName;
     }
     
     /**
      * The setBsn method allows the client to enter a BSN number, it will be stored in the field variable.
      */
-    public void setBsn(int newBsn)
+    public void setBsn(int bsn)
     {
-        this.bsn=newBsn;
+        this.bsn=bsn;
     }
    
     /**
@@ -147,7 +166,7 @@ public class Persoon
     { 
         String temp;
         if (birthDay==0 && birthMonth==0 && birthYear==0) {
-            temp="Onbekend";
+            temp="Unknown";
         } else {
             temp=birthDay+"/"+birthMonth+"/"+birthYear;
         }
@@ -218,5 +237,25 @@ public class Persoon
         System.out.println("Birth Date: "+getBirthDay());
         System.out.println("Gender: "+charToStringGender(gender));
         System.out.println("#######################################");
+    }
+    
+    public void getTray(Tray tray)
+    {
+        this.tray = tray;
+    }
+    
+    public void grabArticle(Artikel article)
+    {
+        this.tray.addArticle(article);
+    }
+    
+    public double getTotalPrice()
+    {
+        return this.tray.getTotalPrice();
+    }
+    
+    public int getNumOfArticles()
+    {
+        return this.tray.getNumOfArticles();
     }
 }

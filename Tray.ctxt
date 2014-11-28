@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.params=
+comment0.target=Tray()
+comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ Tray\r\n
+comment1.params=article
+comment1.target=void\ addArticle(Artikel)
+comment2.params=
+comment2.target=int\ getNumOfArticles()
+comment3.params=
+comment3.target=double\ getTotalPrice()
+numComments=4

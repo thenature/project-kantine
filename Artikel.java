@@ -14,14 +14,23 @@ public class Artikel
     /**
      * Constructor for objects of class Artikel
      */
-    public Artikel(String name, double price)
+    public Artikel(String artikelName, double artikelPrice)
     {
         // initialise instance variables
-       this.artikelName=name;
-       this.artikelPrice=price;
+       this.artikelName=artikelName;
+       this.artikelPrice=artikelPrice;
     }
 
-
+    /**
+     * Constructor for objects of class Artikel
+     */
+    public Artikel()
+    {
+        // initialise instance variables
+       this.artikelName="";
+       this.artikelPrice=0.0;
+    }
+    
     /**
      * Geef een artikel een nieuwe naam.
      */

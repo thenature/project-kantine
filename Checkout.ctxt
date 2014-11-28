@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.params=checkoutLine
+comment0.target=Checkout(CheckoutLine)
+comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ Checkout\r\n
+comment1.params=person
+comment1.target=void\ checkoutOrder(Persoon)
+comment1.text=\r\n\ An\ example\ of\ a\ method\ -\ replace\ this\ comment\ with\ your\ own\r\n\ \r\n\ @param\ \ y\ \ \ a\ sample\ parameter\ for\ a\ method\r\n\ @return\ \ \ \ \ the\ sum\ of\ x\ and\ y\ \r\n
+comment2.params=
+comment2.target=int\ getNumOfArticles()
+comment3.params=
+comment3.target=double\ getTotalMoney()
+comment4.params=
+comment4.target=void\ resetCheckout()
+comment5.params=
+comment5.target=void\ resetValues()
+numComments=6
