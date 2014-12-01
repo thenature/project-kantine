@@ -1,9 +1,10 @@
 import java.util.Stack;
 /**
- * Write a description of class Tray here.
+ * The class Tray creates a stack of Articles. This enables a Person to store and 'walk around' with multiple
+ * Articles
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author (Laurens op 't  Zandt & Joost van Woensel) 
+ * @version 1 (01-12-2014)
  */
 public class Tray
 {
@@ -12,7 +13,7 @@ public class Tray
 
     /**
      * Constructor for objects of class Tray
-     * It creates an empty stack to store objects of type Article in
+     * It creates an empty stack to store objects of type Article
      */
     public Tray()
     {
@@ -20,7 +21,7 @@ public class Tray
     }
     
     /**
-     * Adds an artikel to the stack
+     * Adds an article to the stack
      * @param article, the article which needs to be added to the stack
      */
     public void addArticle(Article article)
@@ -37,7 +38,7 @@ public class Tray
     }
     
     /**
-     * Return the collective price of the articles stored on the tray
+     * Return the collective price of the articles stored in the stack
      */
     public double getTotalPrice()
     {

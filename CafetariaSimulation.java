@@ -1,9 +1,10 @@
 
 /**
- * Write a description of class CafetariaSimulation here.
+ * This class creates a new Cafetaria Object and simulates a real cafetaria
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * 
+ * @author (Laurens op 't Zandt & Joost van Woensel) 
+ * @version (1) 01-12-2014
  */
 public class CafetariaSimulation
 {

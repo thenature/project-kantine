@@ -3,12 +3,12 @@ import java.util.Iterator;
 /**
  * Write a description of class Checkout here.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author (Laurens op 't  Zandt & Joost van Woensel) 
+ * @version 1 (01-12-2014)
  */
 public class CheckoutLine
 {
-    // instance variables - replace the example below with your own
+    // HIER MOET NOG WAT KOMEN!!!!
     private LinkedList<Person> line;
 
     /**

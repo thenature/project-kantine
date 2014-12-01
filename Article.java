@@ -1,22 +1,23 @@
 
 /**
- * Write a description of class Artikel here.
+ * This class allows users to create different articles with their respective prices.
+ * There are multiple setters and getters to alter the articles.
  * 
  * @author (Joost van Woensel & Laurens op 't Zandt) 
- * @version (20-11-2014)
+ * @version 2 (01-12-2014)
  */
 public class Article
 {
-    // Dit is de naam van het artikel
+    // This is the name of the article
        private String artikelName;
-    // Dit is de prijs van het artikel    
+    // This is the price of the article 
        private double artikelPrice;
     /**
      * Constructor for objects of class Artikel
      */
     public Article(String artikelName, double artikelPrice)
     {
-        // initialise instance variables
+        // initialise the articles name and price
        this.artikelName=artikelName;
        this.artikelPrice=artikelPrice;
     }
@@ -26,13 +27,13 @@ public class Article
      */
     public Article()
     {
-        // initialise instance variables
+        // initialise the articles name and price
        this.artikelName="";
        this.artikelPrice=0.0;
     }
     
     /**
-     * Geef een artikel een nieuwe naam.
+     * Give a new name to an article
      */
     public void setArtikelName(String name)
     {
@@ -40,7 +41,7 @@ public class Article
     }
     
     /**
-     * Geef een artikel een nieuwe prijs.
+     * Give a new price to an article.
      */
     public void setArtikelPrice (double price)
     {
@@ -48,7 +49,7 @@ public class Article
     }
     
     /**
-     * print de naam van een artikel
+     * prints the articles name
      */
     public String getArtikelName ()
     {
@@ -56,7 +57,7 @@ public class Article
     }
     
     /**
-     * print de prijs van een artikel
+     * prints the articles price
      */
     public double getArtikelPrice()
     {
@@ -70,7 +71,7 @@ public class Article
     {
         System.out.println("#######################################");
         System.out.println("Article: "+artikelName);
-        System.out.println("Price: "+artikelPrice);
+        System.out.println("Price  : "+artikelPrice);
         System.out.println("#######################################");
     }
 }

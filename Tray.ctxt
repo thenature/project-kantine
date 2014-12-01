@@ -1,14 +1,14 @@
 #BlueJ class context
 comment0.params=
 comment0.target=Tray()
-comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ Tray\r\n\ It\ creates\ an\ empty\ stack\ to\ store\ objects\ of\ type\ Article\ in\r\n
+comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ Tray\r\n\ It\ creates\ an\ empty\ stack\ to\ store\ objects\ of\ type\ Article\r\n
 comment1.params=article
 comment1.target=void\ addArticle(Article)
-comment1.text=\r\n\ Adds\ an\ artikel\ to\ the\ stack\r\n\ @param\ article,\ the\ article\ which\ needs\ to\ be\ added\ to\ the\ stack\r\n
+comment1.text=\r\n\ Adds\ an\ article\ to\ the\ stack\r\n\ @param\ article,\ the\ article\ which\ needs\ to\ be\ added\ to\ the\ stack\r\n
 comment2.params=
 comment2.target=int\ getNumOfArticles()
 comment2.text=\r\n\ Returns\ the\ number\ of\ articles\ currently\ in\ the\ stack\r\n
 comment3.params=
 comment3.target=double\ getTotalPrice()
-comment3.text=\r\n\ Return\ the\ collective\ price\ of\ the\ articles\ stored\ on\ the\ tray\r\n
+comment3.text=\r\n\ Return\ the\ collective\ price\ of\ the\ articles\ stored\ in\ the\ stack\r\n
 numComments=4

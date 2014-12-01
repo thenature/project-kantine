@@ -242,14 +242,13 @@ public class Person
     /**
      * Assigns a tray to a person
      */
-    public void getTray(Tray tray)
+    public void setTray(Tray tray)
     {
         this.tray = tray;
     }
     
     /**
      * Allows a person to add an article to their tray
-     * 
      */
     public void grabArticle(Article article)
     {
@@ -257,7 +256,7 @@ public class Person
     }
     
     /**
-     * Returns the collective price of the articles stored on a plate
+     * Returns the collective price of the articles stored on a tray
      */
     public double getTotalPrice()
     {
@@ -265,7 +264,7 @@ public class Person
     }
     
     /**
-     * Returns to number of articles stored on a persons plate
+     * Returns to number of articles stored on a persons tray
      */
     public int getNumOfArticles()
     {
