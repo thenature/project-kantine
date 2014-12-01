@@ -19,10 +19,8 @@ public class CafetariaSimulation
     }
 
     /**
-     * An example of a method - replace this comment with your own
-     * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
+     * Allows the simulation to be started
+     * It takes a number of days and simulates them.
      */
     public void simulate(int days)
     {

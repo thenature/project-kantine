@@ -6,7 +6,7 @@
  * @author (Laurens op t Zandt, Joost van Woensel) 
  * @version (11/21/2014)
  */
-public class Persoon
+public class Person
 {
     //For the BSN variable, the type int is chosen because it can only be a number and never starts with a zero
     private int bsn;
@@ -23,7 +23,7 @@ public class Persoon
      * It sets default values for all field variables. 
      * Some of the variables are set via methods, this is to make sure the tests are made.
      */
-    public Persoon(int birthDay, int birthMonth, int birthYear,String firstName ,String lastName, char gender, int bsn)
+    public Person(int birthDay, int birthMonth, int birthYear,String firstName ,String lastName, char gender, int bsn)
     {
         setBirthday(birthDay, birthMonth, birthYear);
         this.gender = gender;
@@ -39,7 +39,7 @@ public class Persoon
      * It sets default values for all field variables. 
      * No meaningfull value is assigned here, this has to be done via the setters methods.
      */
-    public Persoon()
+    public Person()
     {
         this.birthDay = 0;
         this.birthMonth = 0;
@@ -239,21 +239,34 @@ public class Persoon
         System.out.println("#######################################");
     }
     
+    /**
+     * Assigns a tray to a person
+     */
     public void getTray(Tray tray)
     {
         this.tray = tray;
     }
     
-    public void grabArticle(Artikel article)
+    /**
+     * Allows a person to add an article to their tray
+     * 
+     */
+    public void grabArticle(Article article)
     {
         this.tray.addArticle(article);
     }
     
+    /**
+     * Returns the collective price of the articles stored on a plate
+     */
     public double getTotalPrice()
     {
         return this.tray.getTotalPrice();
     }
     
+    /**
+     * Returns to number of articles stored on a persons plate
+     */
     public int getNumOfArticles()
     {
         return this.tray.getNumOfArticles();

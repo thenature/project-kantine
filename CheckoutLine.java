@@ -9,32 +9,36 @@ import java.util.Iterator;
 public class CheckoutLine
 {
     // instance variables - replace the example below with your own
-    private LinkedList<Persoon> line;
+    private LinkedList<Person> line;
 
     /**
      * Constructor for objects of class Checkout
      */
     public CheckoutLine()
     {
-        line = new LinkedList<Persoon>();
+        line = new LinkedList<Person>();
     }
 
     /**
-     * An example of a method - replace this comment with your own
-     * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
+     * Allows a person to get behind of the line, the object person is added to the linked  List. 
      */
-    public void getBehindOfLine(Persoon person)
+    public void getBehindOfLine(Person person)
     {
         line.add(person);
     }
     
-    public Persoon helpFirstPersonInLine()
+    /**
+     * Allows the first person in the line to process their order.
+     * The first person is deleted from the list and returned
+     */
+    public Person helpFirstPersonInLine()
     {
         return line.pollFirst();
     }
     
+    /**
+     * Returns true if there is at least one person in the line, else it returns false.
+     */
     public boolean thereIsALine()
     {
         if(line.size()>0)

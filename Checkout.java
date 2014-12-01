@@ -21,14 +21,13 @@ public class Checkout
         numOfArticles = 0;
         totalMoney = 0;
     }
-
+    
     /**
-     * An example of a method - replace this comment with your own
-     * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
+     * Allows a person to checkout at the checkout (pay for all articles on the tray)
+     * The price is added to the total amount of money in the checkout
+     * Also the number of Articles is increased
      */
-    public void checkoutOrder(Persoon person)
+    public void checkoutOrder(Person person)
     {
         double totalPrice = person.getTotalPrice();
         totalMoney += totalPrice;
@@ -36,21 +35,33 @@ public class Checkout
         this.numOfArticles += numOfArticles;
     }
     
+    /**
+     * Returns the total amount of articles which passed the checkout since the last time it has been reset
+     */
     public int getNumOfArticles()
     {
         return numOfArticles;
     }
     
+    /**
+     * Returns the total amount of money which has been earned since the last time it has been reset
+     */
     public double getTotalMoney()
     {
         return totalMoney;
     }
     
+    /**
+     * Resets the total amount of money stored in the checkout.
+     */
     public void resetCheckout()
     {
         totalMoney = 0;
     }
     
+    /**
+     * Resets the total amount of articles which passed the checkout.
+     */
     public void resetValues()
     {
         numOfArticles = 0;

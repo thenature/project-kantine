@@ -5,7 +5,7 @@
  * @author (Joost van Woensel & Laurens op 't Zandt) 
  * @version (20-11-2014)
  */
-public class Artikel
+public class Article
 {
     // Dit is de naam van het artikel
        private String artikelName;
@@ -14,7 +14,7 @@ public class Artikel
     /**
      * Constructor for objects of class Artikel
      */
-    public Artikel(String artikelName, double artikelPrice)
+    public Article(String artikelName, double artikelPrice)
     {
         // initialise instance variables
        this.artikelName=artikelName;
@@ -24,7 +24,7 @@ public class Artikel
     /**
      * Constructor for objects of class Artikel
      */
-    public Artikel()
+    public Article()
     {
         // initialise instance variables
        this.artikelName="";

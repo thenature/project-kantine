@@ -28,11 +28,11 @@ public class Cafetaria
      */
     public void walkGrabGetInLine()
     {
-        Persoon person = new Persoon();
+        Person person = new Person();
         Tray tray = new Tray();
         person.getTray(tray);
-        tray.addArticle(new Artikel("Banana", 1.50));
-        tray.addArticle(new Artikel("Sandwich with chicken", 3.50));
+        tray.addArticle(new Article("Banana", 1.50));
+        tray.addArticle(new Article("Sandwich with chicken", 3.50));
         checkoutLine.getBehindOfLine(person);
     }
     
@@ -40,7 +40,7 @@ public class Cafetaria
     {
         while(checkoutLine.thereIsALine())
         {
-            Persoon person = checkoutLine.helpFirstPersonInLine();
+            Person person = checkoutLine.helpFirstPersonInLine();
             checkout.checkoutOrder(person);
             
         }
