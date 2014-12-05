@@ -1,13 +1,13 @@
 
 /**
- * Write a description of class Cafetaria here.
+ * This class is almost the top class of the project, it connects all other classes with each other to create a 'big' cafetaria
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author (Laurens op t Zandt, Joost van Woensel) 
+ * @version 1 (1/12/2014)
  */
 public class Cafetaria
 {
-    // instance variables - replace the example below with your own
+    // instance variables
     private Checkout checkout;
     private CheckoutLine checkoutLine;
 
@@ -21,10 +21,7 @@ public class Cafetaria
     }
 
     /**
-     * An example of a method - replace this comment with your own
-     * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
+     * This method creates a person, connects a tray to it and adds two articles to the tray, then the person is added to the line.
      */
     public void walkGrabGetInLine()
     {
@@ -36,6 +33,9 @@ public class Cafetaria
         checkoutLine.getBehindOfLine(person);
     }
     
+    /**
+     * This method processes the line, it uses checkout.checkoutOrder on each person in the line until the line is gone.
+     */
     public void processLine()
     {
         while(checkoutLine.thereIsALine())
@@ -46,16 +46,25 @@ public class Cafetaria
         }
     }
     
+    /**
+     * This method returns the total amount of money in the checkout.
+     */
     public double amountOfMoneyInCheckout()
     {
         return checkout.getTotalMoney();
     }
     
+     /**
+     * This method returns the total number of articles the checkout has passed.
+     */
     public int numOfArticlesPassed()
     {
         return checkout.getNumOfArticles();
     }
     
+    /**
+     * This method resets the total money and number of articles passed fields of the checkout.
+     */
     public void resetCheckout()
     {
         checkout.resetCheckout();

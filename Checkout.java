@@ -1,13 +1,14 @@
 
 /**
- * Write a description of class Checkout here.
+ * This class allows a checkout to be simulated. Objects of this class exist of a CheckoutLine object, and two other fields
+ * it allows a total balance to be simulated and shows the total 
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author (Laurens op t Zandt, Joost van Woensel)  
+ * @version 1 (1-12-2014)
  */
 public class Checkout
 {
-    // instance variables - replace the example below with your own
+    // instance variables
     private CheckoutLine checkoutLine;
     private int numOfArticles;
     private double totalMoney;

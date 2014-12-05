@@ -8,7 +8,7 @@ import java.util.Stack;
  */
 public class Tray
 {
-    // instance variables - replace the example below with your own
+    // instance variables, there is only one
     private Stack<Article> articles;
 
     /**

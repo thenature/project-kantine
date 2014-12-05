@@ -8,7 +8,7 @@
  */
 public class CafetariaSimulation
 {
-    // instance variables - replace the example below with your own
+    // instance variables, basically just a cafetaria. 
     private Cafetaria cafetaria;
 
     /**

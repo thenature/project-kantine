@@ -4,7 +4,7 @@
  * There is a printDetails method to print all information about a person (object)
  * 
  * @author (Laurens op t Zandt, Joost van Woensel) 
- * @version (11/21/2014)
+ * @version 2 (1/12/2014)
  */
 public class Person
 {
@@ -244,7 +244,10 @@ public class Person
      */
     public void setTray(Tray tray)
     {
-        this.tray = tray;
+        if(this.tray==null)
+        {
+            this.tray = tray;
+        }
     }
     
     /**
@@ -252,7 +255,10 @@ public class Person
      */
     public void grabArticle(Article article)
     {
-        this.tray.addArticle(article);
+        if(this.tray!=null)
+        {
+            this.tray.addArticle(article);
+        }
     }
     
     /**
@@ -260,7 +266,13 @@ public class Person
      */
     public double getTotalPrice()
     {
-        return this.tray.getTotalPrice();
+        if(this.tray!=null)
+        {
+            return this.tray.getTotalPrice();
+        }else
+        {
+            return -1;
+        }
     }
     
     /**
@@ -268,6 +280,10 @@ public class Person
      */
     public int getNumOfArticles()
     {
-        return this.tray.getNumOfArticles();
+        if(this.tray!=null)
+        {
+            return this.tray.getNumOfArticles();
+        }
+        return -1;
     }
 }

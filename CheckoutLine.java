@@ -1,14 +1,15 @@
 import java.util.LinkedList;
 import java.util.Iterator;
 /**
- * Write a description of class Checkout here.
+ * This class simulates a checkoutline, basically it is a list of persons. Each person can be helped via the method helpFirstPersonInLine
+ * Then the person is deleted from the list and returned.
  * 
  * @author (Laurens op 't  Zandt & Joost van Woensel) 
  * @version 1 (01-12-2014)
  */
 public class CheckoutLine
 {
-    // HIER MOET NOG WAT KOMEN!!!!
+    // The linked list in which Person objects are stored.
     private LinkedList<Person> line;
 
     /**
