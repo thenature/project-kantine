@@ -3,8 +3,10 @@ import java.util.*;
  * 
  */
 public class CafetariaOffer {
-    // interne opslag voorraad
+    // internal storage unit
     private HashMap<String, ArrayList<Article>> offer;
+    //This hashMap makes sure it knows what articles to add in case the arraylist stored in offer is empty
+    private HashMap<String, Article> backupHashMap;
    
     
     /**
@@ -15,9 +17,11 @@ public class CafetariaOffer {
      */
     public CafetariaOffer(String[] articleName, double[] price, int[] amount) {
         offer = new HashMap<String, ArrayList<Article>>();
+        backupHashMap = new HashMap<>();
         for(int i=0;i<articleName.length;i++) 
         {
             ArrayList<Article> articles = new ArrayList<Article>();
+            backupHashMap.put(articleName[i], new Article(articleName[i], price[i]));
             for(int j=0;j<amount[i];j++) 
             {
                 articles.add(new Article(articleName[i], price[i]));
@@ -62,5 +66,23 @@ public class CafetariaOffer {
      */
     public Article getArticle(String name) {
         return getArticle(getArrayList(name));
+    }
+    
+    public int getCurrentStock(String articleName)
+    {
+        return offer.get(articleName).size();
+    }
+    
+    public int restockArticle(String articleName, int restockLevel)
+    {
+        Article articleToRestock = backupHashMap.get(articleName);
+        int counter=0;
+        for(int currentStock = getCurrentStock(articleName); currentStock < restockLevel ; currentStock++)
+        {
+            offer.get(articleName).add(articleToRestock);
+            counter++;
+        }
+        //Return how many articles have been added
+        return counter;
     }
 }
