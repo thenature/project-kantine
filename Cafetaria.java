@@ -10,6 +10,7 @@ public class Cafetaria
     // instance variables
     private Checkout checkout;
     private CheckoutLine checkoutLine;
+    private CafetariaOffer cafetariaOffer;
 
     /**
      * Constructor for objects of class Cafetaria
@@ -23,13 +24,12 @@ public class Cafetaria
     /**
      * This method creates a person, connects a tray to it and adds two articles to the tray, then the person is added to the line.
      */
-    public void walkGrabGetInLine()
+    public void walkGrabGetInLine(Person person, String[] articleNames)
     {
-        Person person = new Person();
-        Tray tray = new Tray();
-        person.setTray(tray);
-        person.getTray().addArticle(new Article("Banana", 1.50));
-        person.getTray().addArticle(new Article("Sandwich with chicken", 3.50));
+        for(String articleName : articleNames)
+        {
+             person.getTray().addArticle(cafetariaOffer.getArticle(articleName));
+        }
         checkoutLine.getBehindOfLine(person);
     }
     
@@ -47,36 +47,26 @@ public class Cafetaria
     }
     
     /**
-     * This method returns the total amount of money in the checkout.
-     *
-    public double amountOfMoneyInCheckout()
-    {
-        return checkout.getTotalMoney();
-    }
-    
-     /**
-     * This method returns the total number of articles the checkout has passed.
-     *
-    public int numOfArticlesPassed()
-    {
-        return checkout.getNumberOfArticles();
-    }
-    
-    /**
-     * This method resets the total money and number of articles passed fields of the checkout.
-     *
-    public void resetCheckout()
-    {
-        checkout.resetCheckout();
-        checkout.resetValues();
-    }
-    */
-    
-    /**
      * This method returns the checkout associated with this instance of the cafetaria
      */
     public Checkout getCheckout()
     {
         return checkout;
+    }
+    
+    /**
+     * This method sets the CafetariaOffer.
+     */
+    public void setCafetariaOffer(CafetariaOffer cafetariaOffer)
+    {
+        this.cafetariaOffer = cafetariaOffer;
+    }
+    
+    /**
+     * This method returns the CafetariaOffer
+     */
+    public CafetariaOffer getCafetariaOffer()
+    {
+        return this.cafetariaOffer;
     }
 }
