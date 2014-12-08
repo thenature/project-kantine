@@ -250,19 +250,6 @@ public class Person
         }
     }
     
-    /*
-    /**
-     * Allows a person to add an article to their tray
-     *
-    public void grabArticle(Article article)
-    {
-        if(this.tray!=null)
-        {
-            this.tray.addArticle(article);
-        }
-    }
-    */
-    
     /**
      * This method returns the Object stored in the field tray of this person.
      * It returns an object of class Tray

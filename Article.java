@@ -13,7 +13,7 @@ public class Article
     // This is the price of the article 
        private double artikelPrice;
     /**
-     * Constructor for objects of class Artikel
+     * Constructor for objects of class Article
      */
     public Article(String artikelName, double artikelPrice)
     {
@@ -23,7 +23,7 @@ public class Article
     }
 
     /**
-     * Constructor for objects of class Artikel
+     * Constructor for objects of class Article
      */
     public Article()
     {

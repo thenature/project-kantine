@@ -1,19 +1,20 @@
 import java.util.*;
 /**
- * 
+ * this class simulates the offers of the cafetaria, it contains the articles that are sold, their prices and the amount left in stock.
+ * @author (Laurens op 't Zandt & Joost van Woensel) 
+ * @version (1) 08-12-2014
  */
 public class CafetariaOffer {
-    // internal storage unit
+    // this Hashmap containts all the articles, their prices and the amount left in stock
     private HashMap<String, ArrayList<Article>> offer;
     //This hashMap makes sure it knows what articles to add in case the arraylist stored in offer is empty
     private HashMap<String, Article> backupHashMap;
    
     
     /**
-     * Constructor. Het eerste argument is een lijst met artikelnamen,
-     * het tweede argument is een lijst met prijzen en het derde argument
-     * is een lijst met hoeveelheden. Let op: de dimensies van de drie arrays
-     * moeten wel gelijk zijn!
+     * Constructor. the first variable is a list of articles,
+     * the second is a list of prices and the third is a list of the ammounts in stock of the articles
+     * Notice, the size of the three arrays has to be the same!
      */
     public CafetariaOffer(String[] articleName, double[] price, int[] amount) {
         offer = new HashMap<String, ArrayList<Article>>();
@@ -30,17 +31,17 @@ public class CafetariaOffer {
         }
     }
 
-    /*
-     * Private methode om de lijst van artikelen te krijgen op basis van de    
-     * naam van het artikel. Retourneert null als artikel niet bestaat.
+    /**
+     * Private method to get a list of articles, based on the name of the article
+     * will return null if the article doesnt exist.
      */
     private ArrayList<Article> getArrayList(String productName) {
          return offer.get(productName); 
     }
 
     /**
-     * Private methode om een Artikel van de stapel artikelen af te pakken. 
-     * Retourneert null als de stapel leeg is.
+     * Private method to grab an article from the stack
+     * returns null if the stack is empty.
      */
     private Article getArticle(ArrayList<Article> stack) {
         if (stack==null) { 
@@ -59,20 +60,29 @@ public class CafetariaOffer {
     }
 
     /**
-     * Publieke methode om een artikel via naam van de stapel te pakken.
-     * Retouneert null als artikel niet bestaat of niet op voorraad is.
-     * @param naam (van artikel)
-     * @return artikel (of null)
+     * public method to grab an article from the stack by its name
+     * returns null if the article doesn't exist or is not in stock
+     * @param name (of article)
+     * @return article (or null)
      */
     public Article getArticle(String name) {
         return getArticle(getArrayList(name));
     }
     
+    /**
+     * public method to get the ammount of articles left of a certain article.
+     * @param articleName
+     */
     public int getCurrentStock(String articleName)
     {
         return offer.get(articleName).size();
     }
     
+    /**
+     * public method to restock an article to the desired level.
+     * @param articleName (name of the article you want to restock)
+     * @param restocklevel (the amount of the article we want to have in stock, as specified by the cafetaria simulator)
+     */
     public int restockArticle(String articleName, int restockLevel)
     {
         Article articleToRestock = backupHashMap.get(articleName);
