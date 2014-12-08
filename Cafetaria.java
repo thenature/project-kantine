@@ -48,7 +48,7 @@ public class Cafetaria
     
     /**
      * This method returns the total amount of money in the checkout.
-     */
+     *
     public double amountOfMoneyInCheckout()
     {
         return checkout.getTotalMoney();
@@ -56,18 +56,27 @@ public class Cafetaria
     
      /**
      * This method returns the total number of articles the checkout has passed.
-     */
+     *
     public int numOfArticlesPassed()
     {
-        return checkout.getNumOfArticles();
+        return checkout.getNumberOfArticles();
     }
     
     /**
      * This method resets the total money and number of articles passed fields of the checkout.
-     */
+     *
     public void resetCheckout()
     {
         checkout.resetCheckout();
         checkout.resetValues();
+    }
+    */
+    
+    /**
+     * This method returns the checkout associated with this instance of the cafetaria
+     */
+    public Checkout getCheckout()
+    {
+        return checkout;
     }
 }

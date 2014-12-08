@@ -1,4 +1,5 @@
 import java.util.Stack;
+import java.util.Iterator;
 /**
  * The class Tray creates a stack of Articles. This enables a Person to store and 'walk around' with multiple
  * Articles
@@ -48,5 +49,14 @@ public class Tray
             totalPrice += article.getArtikelPrice();
         }
         return totalPrice;
+    }
+    
+    /**
+     * This method returns the iterator for the Stack articles.
+     * This can be used to iterate through all articles collected in this Stack.
+     */
+    public Iterator<Article> getIterator()
+    {
+        return articles.iterator();
     }
 }

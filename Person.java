@@ -286,4 +286,13 @@ public class Person
         }
         return -1;
     }
+    
+    /**
+     * This method returns the Object stored in the field tray of this person.
+     * It returns an object of class Tray
+     */
+    public Tray getTray()
+    {
+        return tray;
+    }
 }

@@ -1,4 +1,4 @@
-
+import java.util.Iterator;
 /**
  * This class allows a checkout to be simulated. Objects of this class exist of a CheckoutLine object, and two other fields
  * it allows a total balance to be simulated and shows the total 
@@ -10,7 +10,7 @@ public class Checkout
 {
     // instance variables
     private CheckoutLine checkoutLine;
-    private int numOfArticles;
+    private int numberOfArticles;
     private double totalMoney;
 
     /**
@@ -19,7 +19,7 @@ public class Checkout
     public Checkout(CheckoutLine checkoutLine)
     {
         this.checkoutLine = checkoutLine;
-        numOfArticles = 0;
+        numberOfArticles = 0;
         totalMoney = 0;
     }
     
@@ -32,16 +32,16 @@ public class Checkout
     {
         double totalPrice = person.getTotalPrice();
         totalMoney += totalPrice;
-        int numOfArticles = person.getNumOfArticles();
-        this.numOfArticles += numOfArticles;
+        int numberOfArticles = person.getNumOfArticles();
+        this.numberOfArticles += numberOfArticles;
     }
     
     /**
      * Returns the total amount of articles which passed the checkout since the last time it has been reset
      */
-    public int getNumOfArticles()
+    public int getNumberOfArticles()
     {
-        return numOfArticles;
+        return numberOfArticles;
     }
     
     /**
@@ -65,6 +65,20 @@ public class Checkout
      */
     public void resetValues()
     {
-        numOfArticles = 0;
+        numberOfArticles = 0;
+    }
+    
+    /**
+     * This method iterates through all Article objects stored in the tray Object of the class person.
+     * It returns the total price of the articles
+     */
+    public void getTotalPrice(Person person)
+    {
+        Iterator<Article> iterator = person.getTray().getIterator();
+        double totalPrice = 0;
+        while(iterator.hasNext()){
+            Article article = iterator.next();
+            
+        }
     }
 }
