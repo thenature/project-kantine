@@ -29,7 +29,8 @@ public class CafetariaSimulation
     //Minimum and maximum number of articles per person
     private static final int MIN_ARTICLES_PER_PERSON = 1;
     private static final int MAX_ARTICLES_PER_PERSON = 4;
-
+    //Array of amounts, needed for restocking.
+    private static int[] amounts;
     /**
      * Constructor for objects of class CafetariaSimulation
      */
@@ -37,7 +38,7 @@ public class CafetariaSimulation
     {
         cafetaria = new Cafetaria();
         random = new Random();
-        int[] amounts = getRandomAray(NUMBER_OF_ARTICLES, MIN_ARTICLES_PER_TYPE, MAX_ARTICLES_PER_TYPE);
+        amounts = getRandomAray(NUMBER_OF_ARTICLES, MIN_ARTICLES_PER_TYPE, MAX_ARTICLES_PER_TYPE);
         cafetariaOffer = new CafetariaOffer(articleNames,articlePrices,amounts);
         cafetaria.setCafetariaOffer(cafetariaOffer);
     }
@@ -60,6 +61,7 @@ public class CafetariaSimulation
             cafetaria.processLine();
             System.out.println("Day "+currentDay +": Articles passed: "+cafetaria.getCheckout().getNumberOfArticlesPassed()
             + " Money collected: "+ cafetaria.getCheckout().getTotalMoneyCollected() + " Number of Customers: " + numberOfPersonsToday);
+            checkAndRestockAllArticles();
             cafetaria.getCheckout().resetCheckout();
             cafetaria.getCheckout().resetValues();
         }
@@ -98,5 +100,16 @@ public class CafetariaSimulation
         return articles;
     }
     
+    private void checkAndRestockAllArticles()
+    {
+        for(int i = 0; i< NUMBER_OF_ARTICLES; i++ )
+        {
+            if(cafetariaOffer.getCurrentStock(articleNames[i])<MIN_ARTICLES_PER_TYPE)
+            {
+                int amountRestocked = cafetariaOffer.restockArticle(articleNames[i], amounts[i]);
+                System.out.println("Restocked " + amountRestocked + " articles of type "+ articleNames[i]);
+            }
+        }
+    }
     
 }
