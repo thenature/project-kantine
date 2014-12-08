@@ -31,27 +31,6 @@ public class Tray
     }
     
     /**
-     * Returns the number of articles currently in the stack
-     */
-    public int getNumOfArticles()
-    {
-        return articles.size();
-    }
-    
-    /**
-     * Return the collective price of the articles stored in the stack
-     */
-    public double getTotalPrice()
-    {
-        double totalPrice = 0;
-        for(Article article : articles)
-        {
-            totalPrice += article.getArtikelPrice();
-        }
-        return totalPrice;
-    }
-    
-    /**
      * This method returns the iterator for the Stack articles.
      * This can be used to iterate through all articles collected in this Stack.
      */

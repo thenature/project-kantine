@@ -31,8 +31,8 @@ public class CafetariaSimulation
                 cafetaria.walkGrabGetInLine();
             }
             cafetaria.processLine();
-            System.out.println("Day "+currentDay +": Articles passed: "+cafetaria.getCheckout().getNumberOfArticles()
-            + " Money collected: "+ cafetaria.getCheckout().getTotalMoney());
+            System.out.println("Day "+currentDay +": Articles passed: "+cafetaria.getCheckout().getNumberOfArticlesPassed()
+            + " Money collected: "+ cafetaria.getCheckout().getTotalMoneyCollected());
             cafetaria.getCheckout().resetCheckout();
             cafetaria.getCheckout().resetValues();
         }

@@ -250,9 +250,10 @@ public class Person
         }
     }
     
+    /*
     /**
      * Allows a person to add an article to their tray
-     */
+     *
     public void grabArticle(Article article)
     {
         if(this.tray!=null)
@@ -260,32 +261,7 @@ public class Person
             this.tray.addArticle(article);
         }
     }
-    
-    /**
-     * Returns the collective price of the articles stored on a tray
-     */
-    public double getTotalPrice()
-    {
-        if(this.tray!=null)
-        {
-            return this.tray.getTotalPrice();
-        }else
-        {
-            return -1;
-        }
-    }
-    
-    /**
-     * Returns to number of articles stored on a persons tray
-     */
-    public int getNumOfArticles()
-    {
-        if(this.tray!=null)
-        {
-            return this.tray.getNumOfArticles();
-        }
-        return -1;
-    }
+    */
     
     /**
      * This method returns the Object stored in the field tray of this person.

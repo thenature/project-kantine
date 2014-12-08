@@ -10,8 +10,8 @@ public class Checkout
 {
     // instance variables
     private CheckoutLine checkoutLine;
-    private int numberOfArticles;
-    private double totalMoney;
+    private int numberOfArticlesPassed;
+    private double totalMoneyCollected;
 
     /**
      * Constructor for objects of class Checkout
@@ -19,8 +19,8 @@ public class Checkout
     public Checkout(CheckoutLine checkoutLine)
     {
         this.checkoutLine = checkoutLine;
-        numberOfArticles = 0;
-        totalMoney = 0;
+        numberOfArticlesPassed = 0;
+        totalMoneyCollected = 0;
     }
     
     /**
@@ -30,26 +30,26 @@ public class Checkout
      */
     public void checkoutOrder(Person person)
     {
-        double totalPrice = person.getTotalPrice();
-        totalMoney += totalPrice;
-        int numberOfArticles = person.getNumOfArticles();
-        this.numberOfArticles += numberOfArticles;
+        double totalPrice = getTotalPriceOfCurrentPerson(person);
+        totalMoneyCollected += totalPrice;
+        int numberOfArticles = getNumberOfArticlesOfCurrentPerson(person);
+        this.numberOfArticlesPassed += numberOfArticles;
     }
     
     /**
      * Returns the total amount of articles which passed the checkout since the last time it has been reset
      */
-    public int getNumberOfArticles()
+    public int getNumberOfArticlesPassed()
     {
-        return numberOfArticles;
+        return numberOfArticlesPassed;
     }
     
     /**
      * Returns the total amount of money which has been earned since the last time it has been reset
      */
-    public double getTotalMoney()
+    public double getTotalMoneyCollected()
     {
-        return totalMoney;
+        return totalMoneyCollected;
     }
     
     /**
@@ -57,7 +57,7 @@ public class Checkout
      */
     public void resetCheckout()
     {
-        totalMoney = 0;
+        totalMoneyCollected = 0;
     }
     
     /**
@@ -65,20 +65,37 @@ public class Checkout
      */
     public void resetValues()
     {
-        numberOfArticles = 0;
+        numberOfArticlesPassed = 0;
     }
     
     /**
      * This method iterates through all Article objects stored in the tray Object of the class person.
      * It returns the total price of the articles
      */
-    public void getTotalPrice(Person person)
+    private double getTotalPriceOfCurrentPerson(Person person)
     {
         Iterator<Article> iterator = person.getTray().getIterator();
-        double totalPrice = 0;
+        double totalPriceOfCurrentPerson = 0;
         while(iterator.hasNext()){
             Article article = iterator.next();
-            
+            totalPriceOfCurrentPerson+=article.getArtikelPrice();
         }
+        return totalPriceOfCurrentPerson;
+    }
+    
+    /**
+     * This method also iterates through all Article objects stored in the tray Object of the class person.
+     * It returns the total amount of articles stored in the collection.
+     */
+    private int getNumberOfArticlesOfCurrentPerson(Person person)
+    {
+        Iterator<Article> iterator = person.getTray().getIterator();
+        int numberOfArticles = 0;
+        while(iterator.hasNext())
+        {
+            numberOfArticles++;
+            iterator.next();
+        }
+        return numberOfArticles;
     }
 }

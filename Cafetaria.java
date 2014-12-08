@@ -28,8 +28,8 @@ public class Cafetaria
         Person person = new Person();
         Tray tray = new Tray();
         person.setTray(tray);
-        tray.addArticle(new Article("Banana", 1.50));
-        tray.addArticle(new Article("Sandwich with chicken", 3.50));
+        person.getTray().addArticle(new Article("Banana", 1.50));
+        person.getTray().addArticle(new Article("Sandwich with chicken", 3.50));
         checkoutLine.getBehindOfLine(person);
     }
     
