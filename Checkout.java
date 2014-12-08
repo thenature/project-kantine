@@ -4,7 +4,7 @@ import java.util.Iterator;
  * it allows a total balance to be simulated and shows the total 
  * 
  * @author (Laurens op t Zandt, Joost van Woensel)  
- * @version 1 (1-12-2014)
+ * @version 2 (8-12-2014)
  */
 public class Checkout
 {

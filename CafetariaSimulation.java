@@ -67,6 +67,9 @@ public class CafetariaSimulation
         }
     }
     
+    /**
+     * This method creates a Person object and assigns a Tray object to it.
+     */
     private Person makeNewPersonWithTray()
     {
         Person person = new Person();
@@ -75,6 +78,9 @@ public class CafetariaSimulation
         return person;
     }
     
+    /**
+     * This method generates an array of a specified length. It is filled with random values within a set range.
+     */
     private int[] getRandomAray(int length, int min, int max)
     {
         int[] tempArray = new int[length];
@@ -85,11 +91,17 @@ public class CafetariaSimulation
         return tempArray;
     }
     
+    /**
+     * This method generates a random value within a set range
+     */
     private int getRandomValue(int min, int max)
     {
         return random.nextInt(max-min+1)+min;
     }
     
+    /**
+     * This method fills a String array with the values from articleNames based on a set of input integers.
+     */
     private String[] giveArticleNames(int[] indices)
     {
         String[] articles = new String[indices.length];
@@ -100,6 +112,10 @@ public class CafetariaSimulation
         return articles;
     }
     
+    /**
+     * This method restocks all articles underneath the minimum limit of articles per type
+     * It adds new articles to the cafetariaOffer object.
+     */
     private void checkAndRestockAllArticles()
     {
         for(int i = 0; i< NUMBER_OF_ARTICLES; i++ )

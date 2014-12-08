@@ -16,5 +16,5 @@ comment4.target=void\ setCafetariaOffer(CafetariaOffer)
 comment4.text=\r\n\ This\ method\ sets\ the\ CafetariaOffer.\r\n
 comment5.params=
 comment5.target=CafetariaOffer\ getCafetariaOffer()
-comment5.text=\r\n\ This\ method\ returns\ the\ CafetariaOffer\r\n
+comment5.text=\r\n\ This\ method\ returns\ the\ CafetariaOffer.\r\n
 numComments=6

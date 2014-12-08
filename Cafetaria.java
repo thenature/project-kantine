@@ -3,7 +3,7 @@
  * This class is almost the top class of the project, it connects all other classes with each other to create a 'big' cafetaria
  * 
  * @author (Laurens op t Zandt, Joost van Woensel) 
- * @version 1 (1/12/2014)
+ * @version 2 (8/12/2014)
  */
 public class Cafetaria
 {
@@ -63,7 +63,7 @@ public class Cafetaria
     }
     
     /**
-     * This method returns the CafetariaOffer
+     * This method returns the CafetariaOffer.
      */
     public CafetariaOffer getCafetariaOffer()
     {
