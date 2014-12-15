@@ -3,7 +3,7 @@
  * Enumeration class StudyDirection
  * It contains all Study directions Students can choose from.
  * 
- * @author (Laurens op t Zandt)
+ * @author (Laurens op t Zandt & Joost van Woensel)
  * @version (15/12/2014)
  */
 public enum StudyDirection
