@@ -29,6 +29,9 @@ public class CafetariaSimulation
     //Minimum and maximum number of articles per person
     private static final int MIN_ARTICLES_PER_PERSON = 1;
     private static final int MAX_ARTICLES_PER_PERSON = 4;
+    private static final double STUDENT_CHANCE = 0.89;
+    private static final double TEACHER_CHANCE = 0.1;
+    private static final double CAFETARIA_EMPLOYEE_CHANCE = 0.01;
     //Array of amounts, needed for restocking.
     private static int[] amounts;
     /**
@@ -56,7 +59,9 @@ public class CafetariaSimulation
                 int numberOfArticles = getRandomValue(MIN_ARTICLES_PER_PERSON, MAX_ARTICLES_PER_PERSON);
                 int[] articlesToGrab = getRandomAray(numberOfArticles,0,NUMBER_OF_ARTICLES-1);
                 String[] articles = giveArticleNames(articlesToGrab);
-                cafetaria.walkGrabGetInLine(makeNewPersonWithTray(),articles);
+                Person nextPerson = makeNewPersonWithTray();
+                cafetaria.walkGrabGetInLine(nextPerson,articles);
+                nextPerson.printDetails();
             }
             cafetaria.processLine();
             System.out.println("Day "+currentDay +": Articles passed: "+cafetaria.getCheckout().getNumberOfArticlesPassed()
@@ -73,7 +78,19 @@ public class CafetariaSimulation
      */
     private Person makeNewPersonWithTray()
     {
-        Person person = new Person();
+        double randChance = random.nextDouble();
+        Person person;
+        if(randChance<=STUDENT_CHANCE)
+        {
+           person = new Student();
+        }else if(randChance<=STUDENT_CHANCE+TEACHER_CHANCE)//teacher and student are added together to create a unique 10% probbability window for the teacher
+        {
+           person = new Teacher(); 
+        }
+        else
+        {
+            person = new CafetariaEmployee();
+        }
         Tray tray = new Tray();
         person.setTray(tray);
         return person;

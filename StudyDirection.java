@@ -7,5 +7,18 @@
  */
 public enum StudyDirection
 {
-    ECONOMICS, MEDICAL, SPORTS, PHYSICS
+    ECONOMICS("Economics"), MEDICAL("Medical"), SPORTS("Sports"), PHYSICS("Physics"), 
+    UNKNOWN("Unknown");
+    
+    private String directionName;
+    
+    private StudyDirection(String directionName)
+    {
+        this.directionName = directionName;
+    }
+    
+    public String getDirectionName()
+    {
+        return directionName;
+    }
 }

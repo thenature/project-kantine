@@ -17,6 +17,8 @@ public class Teacher extends Person
     public Teacher()
     {
         super();
+        department = Departments.UNKNOWN;
+        abbreviation = "Unkn";
     }
     
     public Teacher(int birthDay, int birthMonth, int birthYear, String firstName ,String lastName, char gender, int bsn, Departments department, String abbreviation)
@@ -72,5 +74,14 @@ public class Teacher extends Person
     public void setAbbreviation(String abbreviation)
     {
         this.abbreviation = abbreviation;
+    }
+    
+    public void printDetails()
+    {
+        System.out.println("#######################################");
+        System.out.println("Teacher:");
+        System.out.println("Department: " + getDepartment().getDepartmentName());
+        System.out.println("Abbreviation: " + getAbbreviation().toUpperCase());
+        System.out.println("#######################################");
     }
 }

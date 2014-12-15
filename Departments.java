@@ -7,5 +7,16 @@
  */
 public enum Departments
 {
-    SPORTS, COUNSELING, ENGLISH, MATH
+    SPORTS("Sports"), COUNSELING("Counseling"), ENGLISH("English"), MATH("Math"), UNKNOWN("Unknown");
+    private String departmentName;
+    
+    private Departments(String departmentName)
+    {
+        this.departmentName = departmentName;
+    }
+    
+    public String getDepartmentName()
+    {
+        return departmentName;
+    }
 }

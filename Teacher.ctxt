@@ -16,4 +16,6 @@ comment6.params=
 comment6.target=java.lang.String\ getAbbreviation()
 comment7.params=abbreviation
 comment7.target=void\ setAbbreviation(java.lang.String)
-numComments=8
+comment8.params=
+comment8.target=void\ printDetails()
+numComments=9

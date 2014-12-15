@@ -5,7 +5,7 @@
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class CanteenEmployee extends Person
+public class CafetariaEmployee extends Person
 {
     private int employeeNumber;
     private boolean canCheckout;
@@ -13,14 +13,14 @@ public class CanteenEmployee extends Person
     /**
      * Constructor for objects of class CanteenEmployee
      */
-    public CanteenEmployee()
+    public CafetariaEmployee()
     {
         super();
         employeeNumber = 0;
         canCheckout = false;
     }
     
-    public CanteenEmployee(int birthDay, int birthMonth, int birthYear, String firstName ,String lastName, char gender, int bsn, int employeeNumber, boolean canCheckout)
+    public CafetariaEmployee(int birthDay, int birthMonth, int birthYear, String firstName ,String lastName, char gender, int bsn, int employeeNumber, boolean canCheckout)
     {
         super(birthDay, birthMonth, birthYear, firstName, lastName, gender, bsn);
         this.employeeNumber = employeeNumber;
@@ -45,5 +45,23 @@ public class CanteenEmployee extends Person
     public void setCanCeckout(boolean canCheckout)
     {
         this.canCheckout = canCheckout;
+    }
+    
+    public void printDetails()
+    {
+        System.out.println("#######################################");
+        System.out.println("Cafetaria employee:");
+        System.out.println("Employee number: " + getEmployeeNumber());
+        System.out.println("Is able to checkout: " + canCheckoutToString());
+        System.out.println("#######################################");
+    }
+    
+    private String canCheckoutToString()
+    {
+        if(getCanCheckout())
+        {
+            return "Yes";
+        }
+        return "No";
     }
 }

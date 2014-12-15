@@ -1,2 +1,6 @@
 #BlueJ class context
-numComments=0
+comment0.params=directionName
+comment0.target=StudyDirection(java.lang.String)
+comment1.params=
+comment1.target=java.lang.String\ getDirectionName()
+numComments=2
