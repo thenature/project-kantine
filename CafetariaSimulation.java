@@ -29,6 +29,7 @@ public class CafetariaSimulation
     //Minimum and maximum number of articles per person
     private static final int MIN_ARTICLES_PER_PERSON = 1;
     private static final int MAX_ARTICLES_PER_PERSON = 4;
+    //Chances of what persons will enter
     private static final double STUDENT_CHANCE = 0.89;
     private static final double TEACHER_CHANCE = 0.1;
     private static final double CAFETARIA_EMPLOYEE_CHANCE = 0.01;
@@ -85,6 +86,9 @@ public class CafetariaSimulation
         printDailyResults(Administration.calculateDailySalesVolume(dailySalesVolumes));
     }
     
+    /**
+     * This method prints an array of 7 double variables. The values will contain values from an array of string with day names a prefix.
+     */
     private void printDailyResults(double[] dayResults)
     {
         String[] days = new String[] {"Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"};
