@@ -7,27 +7,43 @@
  */
 public class CanteenEmployee extends Person
 {
-    // instance variables - replace the example below with your own
-    private int x;
+    private int employeeNumber;
+    private boolean canCheckout;
 
     /**
      * Constructor for objects of class CanteenEmployee
      */
     public CanteenEmployee()
     {
-        // initialise instance variables
-        x = 0;
+        super();
+        employeeNumber = 0;
+        canCheckout = false;
     }
-
-    /**
-     * An example of a method - replace this comment with your own
-     * 
-     * @param  y   a sample parameter for a method
-     * @return     the sum of x and y 
-     */
-    public int sampleMethod(int y)
+    
+    public CanteenEmployee(int birthDay, int birthMonth, int birthYear, String firstName ,String lastName, char gender, int bsn, int employeeNumber, boolean canCheckout)
     {
-        // put your code here
-        return x + y;
+        super(birthDay, birthMonth, birthYear, firstName, lastName, gender, bsn);
+        this.employeeNumber = employeeNumber;
+        this.canCheckout = canCheckout;
+    }
+    
+    public int getEmployeeNumber()
+    {
+        return employeeNumber;
+    }
+    
+    public void setEmployeeNumber(int employeeNumber)
+    {
+        this.employeeNumber = employeeNumber;
+    }
+    
+    public boolean getCanCheckout()
+    {
+        return canCheckout;
+    }
+    
+    public void setCanCeckout(boolean canCheckout)
+    {
+        this.canCheckout = canCheckout;
     }
 }

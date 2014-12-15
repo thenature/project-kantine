@@ -20,6 +20,7 @@ public class Administration {
         
         return collectiveAmounts / days;
     }
+    
     /**     
      * Deze methode berekent van de double array omzet de    
      * gemiddelde waarde    
