@@ -50,11 +50,6 @@ public class Administration {
      {       
          double[]
          temp=new double[DAYS_IN_WEEK];
-        //Make sure the array has enough elements to prevent nullPointerException. If the length would have been seven it would have worked with the loop below
-        //But the above returns the same result so there is no use to use the last loop
-        if(omzet.length<=DAYS_IN_WEEK){
-            return omzet;
-        }
         for(int i=0;i<DAYS_IN_WEEK;i++) {
             int j=0;           
             while(i+j*DAYS_IN_WEEK<omzet.length) {               
