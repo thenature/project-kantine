@@ -61,6 +61,7 @@ public class CafetariaSimulation
             cafetaria.processLine();
             System.out.println("Day "+currentDay +": Articles passed: "+cafetaria.getCheckout().getNumberOfArticlesPassed()
             + " Money collected: "+ cafetaria.getCheckout().getTotalMoneyCollected() + " Number of Customers: " + numberOfPersonsToday);
+            //At the end of each day, the stocks should be checked and optionally restored.
             checkAndRestockAllArticles();
             cafetaria.getCheckout().resetCheckout();
             cafetaria.getCheckout().resetValues();

@@ -1,18 +1,20 @@
 #BlueJ class context
 comment0.params=articleName\ price\ amount
 comment0.target=CafetariaOffer(java.lang.String[],\ double[],\ int[])
-comment0.text=\r\n\ Constructor.\ Het\ eerste\ argument\ is\ een\ lijst\ met\ artikelnamen,\r\n\ het\ tweede\ argument\ is\ een\ lijst\ met\ prijzen\ en\ het\ derde\ argument\r\n\ is\ een\ lijst\ met\ hoeveelheden.\ Let\ op\:\ de\ dimensies\ van\ de\ drie\ arrays\r\n\ moeten\ wel\ gelijk\ zijn\!\r\n
+comment0.text=\r\n\ Constructor.\ the\ first\ variable\ is\ a\ list\ of\ articles,\r\n\ the\ second\ is\ a\ list\ of\ prices\ and\ the\ third\ is\ a\ list\ of\ the\ ammounts\ in\ stock\ of\ the\ articles\r\n\ Notice,\ the\ size\ of\ the\ three\ arrays\ has\ to\ be\ the\ same\!\r\n
 comment1.params=productName
 comment1.target=java.util.ArrayList\ getArrayList(java.lang.String)
-comment1.text=\r\n\ Private\ methode\ om\ de\ lijst\ van\ artikelen\ te\ krijgen\ op\ basis\ van\ de\ \ \ \ \r\n\ naam\ van\ het\ artikel.\ Retourneert\ null\ als\ artikel\ niet\ bestaat.\r\n
+comment1.text=\r\n\ Private\ method\ to\ get\ a\ list\ of\ articles,\ based\ on\ the\ name\ of\ the\ article\r\n\ will\ return\ null\ if\ the\ article\ doesnt\ exist.\r\n
 comment2.params=stack
 comment2.target=Article\ getArticle(java.util.ArrayList)
-comment2.text=\r\n\ Private\ methode\ om\ een\ Artikel\ van\ de\ stapel\ artikelen\ af\ te\ pakken.\ \r\n\ Retourneert\ null\ als\ de\ stapel\ leeg\ is.\r\n
+comment2.text=\r\n\ Private\ method\ to\ grab\ an\ article\ from\ the\ stack\r\n\ returns\ null\ if\ the\ stack\ is\ empty.\r\n
 comment3.params=name
 comment3.target=Article\ getArticle(java.lang.String)
-comment3.text=\r\n\ Publieke\ methode\ om\ een\ artikel\ via\ naam\ van\ de\ stapel\ te\ pakken.\r\n\ Retouneert\ null\ als\ artikel\ niet\ bestaat\ of\ niet\ op\ voorraad\ is.\r\n\ @param\ naam\ (van\ artikel)\r\n\ @return\ artikel\ (of\ null)\r\n
+comment3.text=\r\n\ public\ method\ to\ grab\ an\ article\ from\ the\ stack\ by\ its\ name\r\n\ returns\ null\ if\ the\ article\ doesn't\ exist\ or\ is\ not\ in\ stock\r\n\ @param\ name\ (of\ article)\r\n\ @return\ article\ (or\ null)\r\n
 comment4.params=articleName
 comment4.target=int\ getCurrentStock(java.lang.String)
+comment4.text=\r\n\ public\ method\ to\ get\ the\ ammount\ of\ articles\ left\ of\ a\ certain\ article.\r\n\ @param\ articleName\r\n
 comment5.params=articleName\ restockLevel
 comment5.target=int\ restockArticle(java.lang.String,\ int)
+comment5.text=\r\n\ public\ method\ to\ restock\ an\ article\ to\ the\ desired\ level.\r\n\ @param\ articleName\ (name\ of\ the\ article\ you\ want\ to\ restock)\r\n\ @param\ restocklevel\ (the\ amount\ of\ the\ article\ we\ want\ to\ have\ in\ stock,\ as\ specified\ by\ the\ cafetaria\ simulator)\r\n
 numComments=6

@@ -1,10 +1,10 @@
 #BlueJ class context
 comment0.params=artikelName\ artikelPrice
 comment0.target=Article(java.lang.String,\ double)
-comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ Artikel\r\n
+comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ Article\r\n
 comment1.params=
 comment1.target=Article()
-comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Artikel\r\n
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Article\r\n
 comment2.params=name
 comment2.target=void\ setArtikelName(java.lang.String)
 comment2.text=\r\n\ Give\ a\ new\ name\ to\ an\ article\r\n

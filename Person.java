@@ -4,7 +4,7 @@
  * There is a printDetails method to print all information about a person (object)
  * 
  * @author (Laurens op t Zandt, Joost van Woensel) 
- * @version 2 (1/12/2014)
+ * @version 3 (8/12/2014)
  */
 public class Person
 {

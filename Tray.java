@@ -5,7 +5,7 @@ import java.util.Iterator;
  * Articles
  * 
  * @author (Laurens op 't  Zandt & Joost van Woensel) 
- * @version 1 (01-12-2014)
+ * @version 2 (08-12-2014)
  */
 public class Tray
 {
