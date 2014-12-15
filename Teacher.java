@@ -1,18 +1,19 @@
 
 /**
- * Write a description of class Teacher here.
+ * This class allows information about teachers to be stored.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author (Laurens op t Zandt & Joost van Woensel))  
+ * @version (15/12/2014)
  */
 public class Teacher extends Person
 {
-    // instance variables - replace the example below with your own
+    // A teacher has a department and abbreviation
     private Departments department;
     private String abbreviation;
 
     /**
      * Constructor for objects of class Teacher
+     * It sets a unknown value for the enumerated type. This makes it clear this has not been set yet.
      */
     public Teacher()
     {
@@ -21,6 +22,10 @@ public class Teacher extends Person
         abbreviation = "Unkn";
     }
     
+    /**
+     * Constructor for objects of class Teacher
+     * It makes a call to the super with a lot of arguments
+     */
     public Teacher(int birthDay, int birthMonth, int birthYear, String firstName ,String lastName, char gender, int bsn, Departments department, String abbreviation)
     {
         super(birthDay, birthMonth, birthYear, firstName, lastName, gender, bsn);
@@ -35,6 +40,9 @@ public class Teacher extends Person
         
     }
     
+    /**
+     * Returns true if the given string is a valid abbreviation
+     */
     private boolean isValidAbbreviation(String abbreviation)
     {
         if(abbreviation.length()==4)
@@ -44,6 +52,9 @@ public class Teacher extends Person
         return false;
     }
     
+    /**
+     * Generates an abbreviation from a given string if it contains at least four characters, if the string has less characters, it returns "ZZZZ"
+     */
     private String generateAbbreviationFromName(String lastName)
     {
         if(lastName.length()<4)
@@ -56,26 +67,41 @@ public class Teacher extends Person
         }
     }
     
+    /**
+     * Returns the department assigned to this teacher
+     */
     public Departments getDepartment()
     {
         return department;
     }
     
+    /**
+     * Sets the department for a teacher object
+     */
     public void setDepartment(Departments department)
     {
         this.department = department;
     }
     
+    /**
+     * Returns the abbreviation of a teacher object
+     */
     public String getAbbreviation()
     {
         return abbreviation;
     }
     
+    /**
+     * Sets the abbriviation for a teacher object
+     */
     public void setAbbreviation(String abbreviation)
     {
         this.abbreviation = abbreviation;
     }
     
+    /**
+     * Prints the details of this objects state
+     */
     public void printDetails()
     {
         System.out.println("#######################################");
