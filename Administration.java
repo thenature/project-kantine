@@ -7,7 +7,7 @@ public class Administration {
      * @param aantal     
      * @return het gemiddelde     
      */    
-    public static double berekenGemiddeldAantal(int[] amount) 
+    public static double calculateAverageAmount(int[] amount) 
     {    
         int days = 0;
         //Make it a double so it doesn't have to be casted when dividing
@@ -27,7 +27,7 @@ public class Administration {
      * @param omzet 
      * @return Het gemiddelde  
      */
-    public static double berekenGemiddeldeOmzet(double[] salesVolume)
+    public static double calculateAverageSalesVolume(double[] salesVolume)
     {      
         int days = 0;
         //Make it a double so it doesn't have to be casted when dividing
@@ -46,7 +46,7 @@ public class Administration {
       * @param omzet     
       * @return array (7 elementen) met dagomzetten     
       */   
-     public static double[] berekenDagOmzet(double[] omzet) 
+     public static double[] calculateDailySalesVolume(double[] omzet) 
      {       
          double[]
          temp=new double[DAYS_IN_WEEK];
@@ -57,7 +57,7 @@ public class Administration {
         }
         for(int i=0;i<DAYS_IN_WEEK;i++) {
             int j=0;           
-            while(j*DAYS_IN_WEEK<omzet.length) {               
+            while(i+j*DAYS_IN_WEEK<omzet.length) {               
                  temp[i]+=omzet[i+DAYS_IN_WEEK*j];               
                  j++;       
             }

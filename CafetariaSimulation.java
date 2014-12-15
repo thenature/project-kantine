@@ -52,6 +52,9 @@ public class CafetariaSimulation
      */
     public void simulate(int days)
     {
+        //creates an array with the same length as our simulation
+        int[] amountsOfProductsSold = new int[days];
+        double[] dailySalesVolumes = new double[days];
         for(int currentDay = 1 ; currentDay <= days ; currentDay++)
         {
             int numberOfPersonsToday = getRandomValue(MIN_PERSONS_PER_DAY, MAX_PERSONS_PER_DAY);
@@ -66,15 +69,35 @@ public class CafetariaSimulation
             cafetaria.processLine();
             System.out.println("Day "+currentDay +": Articles passed: "+cafetaria.getCheckout().getNumberOfArticlesPassed()
             + " Money collected: "+ cafetaria.getCheckout().getTotalMoneyCollected() + " Number of Customers: " + numberOfPersonsToday);
+            //The ammount of products sold on the current day is assigned to a value in the array which later will be sent to the administration
+            amountsOfProductsSold[currentDay-1] = cafetaria.getCheckout().getNumberOfArticlesPassed();
+            dailySalesVolumes[currentDay-1] = cafetaria.getCheckout().getTotalMoneyCollected();
             //At the end of each day, the stocks should be checked and optionally restored.
             checkAndRestockAllArticles();
             cafetaria.getCheckout().resetCheckout();
             cafetaria.getCheckout().resetValues();
         }
+        //Print results of the period of days of simulation
+        System.out.println("Result averages:");
+        System.out.println("Average products sold: " +Administration.calculateAverageAmount(amountsOfProductsSold));
+        System.out.println("Average money collected: " +Administration.calculateAverageSalesVolume(dailySalesVolumes));        
+        System.out.println("Result totals per day of the week: (money collected)");
+        printDailyResults(Administration.calculateDailySalesVolume(dailySalesVolumes));
+    }
+    
+    private void printDailyResults(double[] dayResults)
+    {
+        String[] days = new String[] {"Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"};
+        int counterIndex = 0;
+        for(double result : dayResults)
+        {
+            System.out.println(days[counterIndex] + ": " + result);
+            counterIndex++;
+        }
     }
     
     /**
-     * This method creates a Person object and assigns a Tray object to it.
+     * This method creates a Person object of a random subtype and assigns a Tray object to it.
      */
     private Person makeNewPersonWithTray()
     {
@@ -87,7 +110,7 @@ public class CafetariaSimulation
         {
            person = new Teacher(); 
         }
-        else
+        else//To prevent compiling errors just the leftover chance is taken instead of (randChance<=STUDENT_CHANCE+TEACHER_CHANCE+CAFETARIA_EMPLOYEE_CHANCE)
         {
             person = new CafetariaEmployee();
         }
