@@ -1,19 +1,26 @@
 #BlueJ class context
 comment0.params=
 comment0.target=CafetariaEmployee()
-comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ CanteenEmployee\r\n
+comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ CanteenEmployee\r\n\ standard\ values\ from\ the\ super\ class\ are\ used,\ standard\ employee\ has\ number\ -1\r\n\ to\ make\ obvious\ that\ this\ employee\ has\ not\ been\ properly\ set\ up\ yet.\r\n
 comment1.params=birthDay\ birthMonth\ birthYear\ firstName\ lastName\ gender\ bsn\ employeeNumber\ canCheckout
 comment1.target=CafetariaEmployee(int,\ int,\ int,\ java.lang.String,\ java.lang.String,\ char,\ int,\ int,\ boolean)
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ CanteenEmployee\r\n\ you\ can\ add\ your\ own\ values\ to\ this\ one.\r\n
 comment2.params=
 comment2.target=int\ getEmployeeNumber()
+comment2.text=\r\n\ returns\ the\ employeenumber\r\n
 comment3.params=employeeNumber
 comment3.target=void\ setEmployeeNumber(int)
+comment3.text=\r\n\ sets\ the\ employeenumber\r\n
 comment4.params=
 comment4.target=boolean\ getCanCheckout()
+comment4.text=\r\n\ returns\ if\ the\ cassier\ is\ capable\ of\ checking\ out.\r\n
 comment5.params=canCheckout
 comment5.target=void\ setCanCeckout(boolean)
+comment5.text=\r\n\ sets\ if\ the\ cassier\ is\ capable\ of\ checking\ out.\r\n
 comment6.params=
 comment6.target=void\ printDetails()
+comment6.text=\r\n\ prints\ the\ employee\ details\r\n
 comment7.params=
 comment7.target=java.lang.String\ canCheckoutToString()
+comment7.text=\r\n\ returns\ an\ easier\ to\ read\ answer\ to\ the\ question\ "can\ this\ employee\ work\ at\ the\ register"\r\n
 numComments=8
