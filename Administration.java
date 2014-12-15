@@ -1,11 +1,24 @@
-public class Administration {     
+/**
+ *A class containing calculations usefull for business practices
+ * like avarages by day of the week
+ *
+ *@author (Laurens op 't Zandt & Joost van Woensel
+ *@version (15-12-2014)
+ */
+
+public class Administration { 
+    
     private static final int DAYS_IN_WEEK = 7;
+    
+    /**
+     * this constructor is used to obstruct the creation of an object because this is a class with just static methods.
+     */
     private Administration(){}
-    /**     
-     * Deze methode berekent van de int array aantal de      
-     * gemiddelde waarde     
-     * @param aantal     
-     * @return het gemiddelde     
+    
+    /** 
+     * this method calculates the avarage value of the int array
+     * @param amount     
+     * @return the avarage (collectiveAmounts/days)     
      */    
     public static double calculateAverageAmount(int[] amount) 
     {    
@@ -22,10 +35,9 @@ public class Administration {
     }
     
     /**     
-     * Deze methode berekent van de double array omzet de    
-     * gemiddelde waarde    
-     * @param omzet 
-     * @return Het gemiddelde  
+     * this method calculates the avarage value of the double array salesVolume   
+     * @param salesvolume 
+     * @return the avarage (collectiveAmounts/days)  
      */
     public static double calculateAverageSalesVolume(double[] salesVolume)
     {      
@@ -41,19 +53,22 @@ public class Administration {
         return collectiveAmounts / days;
     } 
     
-     /**     
-      * Methode om dagomzet uit te rekenen     
-      * @param omzet     
-      * @return array (7 elementen) met dagomzetten     
+     /** 
+      * method to calculate the daily sales volume     
+      * @param salesVolume     
+      * @return array (7 elements) with daily sales volumes     
       */   
-     public static double[] calculateDailySalesVolume(double[] omzet) 
+     public static double[] calculateDailySalesVolume(double[] salesVolume) 
      {       
          double[]
          temp=new double[DAYS_IN_WEEK];
+        //Make sure the array has enough elements to prevent nullPointerException. If the length would have been seven it would have worked with the loop below
+        //But the above returns the same result so there is no use to use the last loop
+      
         for(int i=0;i<DAYS_IN_WEEK;i++) {
             int j=0;           
-            while(i+j*DAYS_IN_WEEK<omzet.length) {               
-                 temp[i]+=omzet[i+DAYS_IN_WEEK*j];               
+            while(i+j*DAYS_IN_WEEK<salesVolume.length) {               
+                 temp[i]+=salesVolume[i+DAYS_IN_WEEK*j];               
                  j++;       
             }
         }
