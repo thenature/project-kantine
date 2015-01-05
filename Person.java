@@ -282,4 +282,77 @@ public class Person
     {
         return tray;
     }
+    
+    /**
+     * This method tests wether two objects are equal to each other. 
+     * @param object The object to compare to this object.
+     * @return true if the objects are equal, else false
+     */
+    public boolean equals(Object object)
+    {
+        Person personToCompare = null;
+        
+        if(this == object) 
+        {        
+            return true;   // Same reference so must be same object. 
+        }
+        
+        if(object instanceof Person)
+        {
+            personToCompare = (Person) object;
+        }else
+        {
+            return false;
+        }
+        
+        if(bsn!=personToCompare.bsn)
+        {
+            return false;
+        }
+        
+        if(!firstName.equals(personToCompare.firstName))
+        {
+            return false;
+        }
+        
+        if(!lastName.equals(personToCompare.lastName))
+        {
+            return false;
+        }
+        
+        if(birthDay!=personToCompare.birthDay)
+        {
+            return false;
+        }
+        
+        if(birthMonth!=personToCompare.birthMonth)
+        {
+            return false;
+        }
+        
+        if(birthYear!=personToCompare.birthYear)
+        {
+            return false;
+        }
+        
+        if(gender!=personToCompare.gender)
+        {
+            return false;
+        }
+        
+        //Because tray is instantiated as null we dont have acces to the tray object's method equals if no tray has been set.
+        if(tray==null)
+        {
+           if(personToCompare.tray!=null)
+           {
+               return false;
+           }   
+        }
+        else if(!tray.equals(personToCompare.tray))
+        {
+            return false;
+        }
+        
+        return true;
+    }
 }
