@@ -1,6 +1,8 @@
 #BlueJ class context
 comment0.params=departmentName
 comment0.target=Departments(java.lang.String)
+comment0.text=\r\n\ Make\ a\ new\ Enumerated\ type\ of\ Departments\ with\ a\ String\ direction\ Name\ as\ parameter\r\n
 comment1.params=
 comment1.target=java.lang.String\ getDepartmentName()
+comment1.text=\r\n\ Returns\ the\ departmentName\ of\ an\ enumerated\ type\ Departments\r\n
 numComments=2

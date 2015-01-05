@@ -68,14 +68,15 @@ public class Student extends Person
     }
     
     /**
-     * Prints all details about the student, overrides to printDetails method from person.
+     * Prints all details about the student, overrides  toString method from person and object.
      */
-    public void printDetails()
+    public String toString()
     {
-        System.out.println("#######################################");
-        System.out.println("Student:");
-        System.out.println("Student number: " + getStudentNumber());
-        System.out.println("Direction: " + studyDirection.getDirectionName());
-        System.out.println("#######################################");
+        String stringToReturn = super.getPersonInfoWithoutLastHashtags();
+        stringToReturn += "Student:\n";
+        stringToReturn += ("Student number: " + getStudentNumber() + "\n");
+        stringToReturn += ("Direction: " + studyDirection.getDirectionName() + "\n");
+        stringToReturn += "#######################################\n";
+        return stringToReturn;
     }
 }

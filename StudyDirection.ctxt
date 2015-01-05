@@ -1,6 +1,8 @@
 #BlueJ class context
 comment0.params=directionName
 comment0.target=StudyDirection(java.lang.String)
+comment0.text=\r\n\ Make\ a\ new\ Enumerated\ type\ of\ Study\ direction\ with\ a\ String\ direction\ Name\ as\ parameter\r\n
 comment1.params=
 comment1.target=java.lang.String\ getDirectionName()
+comment1.text=\r\n\ Returns\ the\ directionName\ of\ an\ enumerated\ type\ StudyDirection\r\n
 numComments=2

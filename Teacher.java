@@ -100,14 +100,16 @@ public class Teacher extends Person
     }
     
     /**
-     * Prints the details of this objects state
+     * Prints all details about the teacher, overrides  toString method from person and object.
      */
-    public void printDetails()
+    public String toString()
     {
-        System.out.println("#######################################");
-        System.out.println("Teacher:");
-        System.out.println("Department: " + getDepartment().getDepartmentName());
-        System.out.println("Abbreviation: " + getAbbreviation().toUpperCase());
-        System.out.println("#######################################");
+        String stringToReturn = super.getPersonInfoWithoutLastHashtags();
+        stringToReturn += ("Teacher:\n");
+        stringToReturn += ("Department: " + getDepartment().getDepartmentName()+"\n");
+        stringToReturn += ("Abbreviation: " + getAbbreviation().toUpperCase()+"\n");
+        stringToReturn += "#######################################\n";
+        return stringToReturn;
     }
+    
 }

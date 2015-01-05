@@ -65,7 +65,7 @@ public class CafetariaSimulation
                 String[] articles = giveArticleNames(articlesToGrab);
                 Person nextPerson = makeNewPersonWithTray();
                 cafetaria.walkGrabGetInLine(nextPerson,articles);
-                nextPerson.printDetails();
+                System.out.println(nextPerson);
             }
             cafetaria.processLine();
             System.out.println("Day "+currentDay +": Articles passed: "+cafetaria.getCheckout().getNumberOfArticlesPassed()

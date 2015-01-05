@@ -7,6 +7,7 @@ comment1.target=void\ simulate(int)
 comment1.text=\r\n\ Allows\ the\ simulation\ to\ be\ started\r\n\ It\ takes\ a\ number\ of\ days\ and\ simulates\ them.\r\n
 comment2.params=dayResults
 comment2.target=void\ printDailyResults(double[])
+comment2.text=\r\n\ This\ method\ prints\ an\ array\ of\ 7\ double\ variables.\ The\ values\ will\ contain\ values\ from\ an\ array\ of\ string\ with\ day\ names\ a\ prefix.\r\n
 comment3.params=
 comment3.target=Person\ makeNewPersonWithTray()
 comment3.text=\r\n\ This\ method\ creates\ a\ Person\ object\ of\ a\ random\ subtype\ and\ assigns\ a\ Tray\ object\ to\ it.\r\n

@@ -17,7 +17,6 @@ public class Person
     private int birthYear;
     private char gender;
     private Tray tray;
-
     /**
      * Constructor for objects of class Persoon
      * It sets default values for all field variables. 
@@ -237,6 +236,31 @@ public class Person
         System.out.println("Birth Date: "+getBirthDay());
         System.out.println("Gender: "+charToStringGender(gender));
         System.out.println("#######################################");
+    }
+    
+    /**
+     * Return all info about a person without closing hashtags to provide possibility for subclasses to add additional info.
+     */
+    protected String getPersonInfoWithoutLastHashtags()
+    {
+        String stringToReturn = "" ;
+        stringToReturn+="#######################################\n";
+        stringToReturn+= ("First name: "+firstName+"\n");
+        stringToReturn+= ("Last name: " +lastName+ "\n");
+        stringToReturn+= ("BSN: "+bsn + "\n");
+        stringToReturn+= ("Birth Date: "+getBirthDay()+"\n");
+        stringToReturn+= ("Gender: "+charToStringGender(gender)+"\n");
+        return stringToReturn;
+    }
+    
+    /**
+     * This method returns all info about a person object as a String.
+     */
+    public String toString()
+    {
+        String stringToReturn =  getPersonInfoWithoutLastHashtags();
+        stringToReturn += "#######################################";
+        return stringToReturn;
     }
     
     /**

@@ -1,17 +1,23 @@
 #BlueJ class context
 comment0.params=
 comment0.target=Student()
-comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ Student\r\n
+comment0.text=\r\n\ Constructor\ for\ objects\ of\ class\ Student\r\n\ It\ creates\ an\ empty\ student\ for\ testing\ purposes\r\n
 comment1.params=birthDay\ birthMonth\ birthYear\ firstName\ lastName\ gender\ bsn\ studyDirection\ studentNumber
 comment1.target=Student(int,\ int,\ int,\ java.lang.String,\ java.lang.String,\ char,\ int,\ StudyDirection,\ java.lang.String)
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Student\r\n\ It\ creates\ a\ Student\ object\ (Which\ extends\ a\ person\ object)\ holding\ all\ variables\ given.\r\n
 comment2.params=
 comment2.target=StudyDirection\ getStudyDirection()
+comment2.text=\r\n\ Return\ the\ study\ direction\ a\ a\ student.\r\n
 comment3.params=studyDirection
 comment3.target=void\ setStudyDirection(StudyDirection)
+comment3.text=\r\n\ Sets\ the\ studyDirection\ of\ a\ student,\ takes\ Enumerated\ type\ as\ input.\r\n
 comment4.params=
 comment4.target=java.lang.String\ getStudentNumber()
+comment4.text=\r\n\ Returns\ a\ students\ student\ number\r\n
 comment5.params=studentNumber
 comment5.target=void\ setStudentNumber(java.lang.String)
+comment5.text=\r\n\ Replaces\ the\ studentNumber\ by\ the\ given\ input\ String.\r\n
 comment6.params=
-comment6.target=void\ printDetails()
+comment6.target=java.lang.String\ toString()
+comment6.text=\r\n\ Prints\ all\ details\ about\ the\ student,\ overrides\ \ toString\ method\ from\ person\ and\ object.\r\n
 numComments=7

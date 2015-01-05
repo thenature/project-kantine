@@ -70,19 +70,18 @@ public class CafetariaEmployee extends Person
         this.canCheckout = canCheckout;
     }
     
-    
     /**
-     * prints the employee details
+     * Prints all details about the teacher, overrides  toString method from person and object.
      */
-    public void printDetails()
+    public String toString()
     {
-        System.out.println("#######################################");
-        System.out.println("Cafetaria employee:");
-        System.out.println("Employee number: " + getEmployeeNumber());
-        System.out.println("Is able to checkout: " + canCheckoutToString());
-        System.out.println("#######################################");
+        String stringToReturn = super.getPersonInfoWithoutLastHashtags();
+        stringToReturn += "Cafetaria employee:\n";
+        stringToReturn += ("Employee number: " + getEmployeeNumber()+"\n");
+        stringToReturn += ("Is able to checkout: " + canCheckoutToString()+"\n");
+        stringToReturn += ("#######################################"+"\n");
+        return stringToReturn;
     }
-    
     
     /**
      * returns an easier to read answer to the question "can this employee work at the register"
