@@ -8,7 +8,7 @@
  * @version (15-12-2014)
  */
 
-public class CafetariaEmployee extends Person
+public class CafetariaEmployee extends Person implements DiscountCardHolder
 {
     private int employeeNumber;
     private boolean canCheckout;
@@ -93,5 +93,20 @@ public class CafetariaEmployee extends Person
             return "Yes";
         }
         return "No";
+    }
+    
+    public double giveMaximum()
+    {
+        return 0;
+    }
+    
+    public boolean hasMaximum()
+    {
+        return false;
+    }
+    
+    public double giveDiscountPercentage()
+    {
+        return 0.35;
     }
 }

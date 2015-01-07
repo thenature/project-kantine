@@ -31,9 +31,38 @@ public class Checkout
     public void checkoutOrder(Person person)
     {
         double totalPrice = getTotalPriceOfCurrentPerson(person);
-        totalMoneyCollected += totalPrice;
-        int numberOfArticles = getNumberOfArticlesOfCurrentPerson(person);
-        this.numberOfArticlesPassed += numberOfArticles;
+        //Check if the person has a discount card.
+        if(person instanceof DiscountCardHolder)
+        {
+            DiscountCardHolder discountCardHolder = (DiscountCardHolder) person;
+            //Check if the discount card has a maximum
+            if(discountCardHolder.hasMaximum())
+            {
+                double discount = totalPrice * discountCardHolder.giveDiscountPercentage();
+                //Check if the discounts exceeds the maximum
+                if(discount>discountCardHolder.giveMaximum())
+                {
+                    discount = discountCardHolder.giveMaximum();
+                }
+                totalPrice -= discount;
+            }else
+            {
+                totalPrice = totalPrice - (totalPrice*discountCardHolder.giveDiscountPercentage());
+            }
+
+        }
+        
+        if(!person.getPaymentMethod().pay(totalPrice))
+        {
+            System.out.println("Payment failed");
+        }else
+        {
+            totalMoneyCollected += totalPrice;
+            int numberOfArticles = getNumberOfArticlesOfCurrentPerson(person);
+            this.numberOfArticlesPassed += numberOfArticles;    
+        }
+        
+        
     }
     
     /**

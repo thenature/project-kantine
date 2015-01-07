@@ -5,7 +5,7 @@
  * @author (Laurens op t Zandt & Joost van Woensel))  
  * @version (15/12/2014)
  */
-public class Teacher extends Person
+public class Teacher extends Person implements DiscountCardHolder
 {
     // A teacher has a department and abbreviation
     private Departments department;
@@ -112,4 +112,18 @@ public class Teacher extends Person
         return stringToReturn;
     }
     
+    public double giveMaximum()
+    {
+        return 1;
+    }
+    
+    public boolean hasMaximum()
+    {
+        return true;
+    }
+    
+    public double giveDiscountPercentage()
+    {
+        return 0.25;
+    }
 }

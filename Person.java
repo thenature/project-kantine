@@ -17,6 +17,7 @@ public class Person
     private int birthYear;
     private char gender;
     private Tray tray;
+    private PaymentMethod paymentMethod;
     /**
      * Constructor for objects of class Persoon
      * It sets default values for all field variables. 
@@ -355,4 +356,12 @@ public class Person
         
         return true;
     }
+    
+    public PaymentMethod getPaymentMethod() {
+		return paymentMethod;
+	}
+
+	public void setPaymentMethod(PaymentMethod paymentMethod) {
+		this.paymentMethod = paymentMethod;
+	}
 }

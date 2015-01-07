@@ -1,0 +1,6 @@
+#BlueJ class context
+comment0.params=balance
+comment0.target=void\ setBalance(double)
+comment1.params=toPay
+comment1.target=boolean\ pay(double)
+numComments=2

@@ -1,0 +1,6 @@
+#BlueJ class context
+comment0.params=creditLimit
+comment0.target=void\ setCreditLimit(double)
+comment1.params=toPay
+comment1.target=boolean\ pay(double)
+numComments=2
