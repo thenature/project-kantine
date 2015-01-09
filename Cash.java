@@ -1,13 +1,15 @@
 
 /**
- * Write a description of class Cash here.
+ * Cash is used to pay cash, it is only used to define the payment method and handle the payment.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author (Laurens op 't Zandt & Joost van Woensel) 
+ * @version (9-1-2015)
  */
 public class Cash extends PaymentMethod
 {
-    
+    /**
+     * decrease the balance with the amount payable
+     */
     public boolean pay(double toPay)
     {
         if(balance>=toPay)
@@ -16,5 +18,13 @@ public class Cash extends PaymentMethod
             return true;
         }
         return false;
+    }
+    
+    /**
+     * return the class as string.
+     */
+    public String toString()
+    {
+        return "Cash";
     }
 }

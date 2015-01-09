@@ -52,16 +52,21 @@ public class Checkout
 
         }
         
-        if(!person.getPaymentMethod().pay(totalPrice))
+        try{
+            if(!person.getPaymentMethod().pay(totalPrice))
+            {
+                System.out.println("Payment failed, because the person didn't have enough money");
+            }else
+            {
+                totalMoneyCollected += totalPrice;
+                int numberOfArticles = getNumberOfArticlesOfCurrentPerson(person);
+                this.numberOfArticlesPassed += numberOfArticles;   
+                System.out.println("Payment succesfull, paid with: " + person.getPaymentMethod());
+            }
+        }catch(NullPointerException npe)
         {
-            System.out.println("Payment failed");
-        }else
-        {
-            totalMoneyCollected += totalPrice;
-            int numberOfArticles = getNumberOfArticlesOfCurrentPerson(person);
-            this.numberOfArticlesPassed += numberOfArticles;    
+            System.out.println("This person doesnt define a payment method");
         }
-        
         
     }
     

@@ -10,6 +10,9 @@ public class Teacher extends Person implements DiscountCardHolder
     // A teacher has a department and abbreviation
     private Departments department;
     private String abbreviation;
+    private static final double MAX_DISCOUNT = 1;
+    private static final boolean HAS_MAXIMUM = true;
+    private static final double DISCOUNT_PERCENTAGE = 0.25;
 
     /**
      * Constructor for objects of class Teacher
@@ -114,16 +117,16 @@ public class Teacher extends Person implements DiscountCardHolder
     
     public double giveMaximum()
     {
-        return 1;
+        return MAX_DISCOUNT;
     }
     
     public boolean hasMaximum()
     {
-        return true;
+        return HAS_MAXIMUM;
     }
     
     public double giveDiscountPercentage()
     {
-        return 0.25;
+        return DISCOUNT_PERCENTAGE;
     }
 }

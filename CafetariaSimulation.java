@@ -4,7 +4,7 @@ import java.util.*;
  * 
  * 
  * @author (Laurens op 't Zandt & Joost van Woensel) 
- * @version (1) 01-12-2014
+ * @version (6) 09-01-2015
  */
 public class CafetariaSimulation
 {
@@ -33,6 +33,9 @@ public class CafetariaSimulation
     private static final double STUDENT_CHANCE = 0.89;
     private static final double TEACHER_CHANCE = 0.1;
     private static final double CAFETARIA_EMPLOYEE_CHANCE = 0.01;
+    
+    private static final int MIN_MONEY_PER_PERSON  = 0;
+    private static final int MAX_MONEY_PER_PERSON  = 20;
     //Array of amounts, needed for restocking.
     private static int[] amounts;
     /**
@@ -65,7 +68,8 @@ public class CafetariaSimulation
                 String[] articles = giveArticleNames(articlesToGrab);
                 Person nextPerson = makeNewPersonWithTray();
                 cafetaria.walkGrabGetInLine(nextPerson,articles);
-                System.out.println(nextPerson);
+                //To avoid the whole screen being full with out printed persons the next line is outcommmented.
+                //System.out.println(nextPerson);
             }
             cafetaria.processLine();
             System.out.println("Day "+currentDay +": Articles passed: "+cafetaria.getCheckout().getNumberOfArticlesPassed()
@@ -120,6 +124,11 @@ public class CafetariaSimulation
         }
         Tray tray = new Tray();
         person.setTray(tray);
+        double moneyForPerson = getRandomValue(MIN_MONEY_PER_PERSON, MAX_MONEY_PER_PERSON);
+        if(person.getPaymentMethod()!=null)
+        {
+            person.getPaymentMethod().setBalance(moneyForPerson);
+        }
         return person;
     }
     

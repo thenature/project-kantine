@@ -1,6 +1,11 @@
 #BlueJ class context
 comment0.params=balance
 comment0.target=void\ setBalance(double)
+comment0.text=\r\n\ This\ method\ allows\ a\ balance\ to\ be\ set\r\n
 comment1.params=toPay
 comment1.target=boolean\ pay(double)
-numComments=2
+comment1.text=\r\n\ This\ method\ is\ used\ to\ pay\r\n
+comment2.params=
+comment2.target=java.lang.String\ toString()
+comment2.text=\r\n\ With\ this\ method\ the\ payment\ method\ must\ be\ returned\ as\ a\ string\r\n
+numComments=3

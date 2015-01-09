@@ -1,6 +1,13 @@
 #BlueJ class context
-comment0.params=creditLimit
-comment0.target=void\ setCreditLimit(double)
-comment1.params=toPay
-comment1.target=boolean\ pay(double)
-numComments=2
+comment0.params=
+comment0.target=Pin()
+comment1.params=creditLimit
+comment1.target=void\ setCreditLimit(double)
+comment1.text=\r\n\ sets\ the\ credit\ limit\r\n\ @param\ (the\ credit\ limit)\r\n
+comment2.params=toPay
+comment2.target=boolean\ pay(double)
+comment2.text=\r\n\ this\ method\ is\ used\ to\ simulate\ the\ payment\r\n\ @param\ (the\ amount\ payable)\r\n\ @return(succesfull\ or\ not)\r\n
+comment3.params=
+comment3.target=java.lang.String\ toString()
+comment3.text=\r\n\ returns\ Pin\r\n
+numComments=4

@@ -12,6 +12,9 @@ public class CafetariaEmployee extends Person implements DiscountCardHolder
 {
     private int employeeNumber;
     private boolean canCheckout;
+    private static final double MAX_DISCOUNT = Double.MAX_VALUE;
+    private static final boolean HAS_MAXIMUM = false;
+    private static final double DISCOUNT_PERCENTAGE = 0.25;
 
     /**
      * Constructor for objects of class CanteenEmployee
@@ -97,16 +100,16 @@ public class CafetariaEmployee extends Person implements DiscountCardHolder
     
     public double giveMaximum()
     {
-        return 0;
+        return MAX_DISCOUNT;
     }
     
     public boolean hasMaximum()
     {
-        return false;
+        return HAS_MAXIMUM;
     }
     
     public double giveDiscountPercentage()
     {
-        return 0.35;
+        return DISCOUNT_PERCENTAGE;
     }
 }

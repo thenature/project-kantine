@@ -18,6 +18,7 @@ public class Person
     private char gender;
     private Tray tray;
     private PaymentMethod paymentMethod;
+    private static boolean PAYS_WITH_PIN = false;
     /**
      * Constructor for objects of class Persoon
      * It sets default values for all field variables. 
@@ -31,7 +32,6 @@ public class Person
         this.lastName=lastName;
         this.bsn = bsn;
         this.tray = null;
-      
     }
     
     /**
@@ -49,6 +49,7 @@ public class Person
         this.lastName="";
         this.bsn = 0;
         this.tray = null;
+        assignPaymentMethod();
     }
     
     /**
@@ -357,11 +358,33 @@ public class Person
         return true;
     }
     
+    /**
+     * returns the payment method used by the person
+     */
     public PaymentMethod getPaymentMethod() {
-		return paymentMethod;
-	}
-
-	public void setPaymentMethod(PaymentMethod paymentMethod) {
-		this.paymentMethod = paymentMethod;
-	}
+        return paymentMethod;
+    }
+    
+    /**
+     * sets the payment method for this person
+     */
+    public void setPaymentMethod(PaymentMethod paymentMethod) {
+        this.paymentMethod = paymentMethod;
+    }
+    
+    /**
+     * the default payment method setter, every person will pay different from the last
+     */
+    private void assignPaymentMethod()
+    {
+        if(PAYS_WITH_PIN)
+        {
+            paymentMethod = new Pin();
+        }else
+        {
+            paymentMethod  = new Cash();
+        }
+        //Change the payment method in a way that the next person will use a different payment method
+        PAYS_WITH_PIN = !PAYS_WITH_PIN;
+    }
 }

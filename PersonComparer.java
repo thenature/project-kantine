@@ -1,12 +1,15 @@
 
 /**
- * Write a description of class PersonComparer here.
+ * This class is a proof of concept of comparing two people.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author (Joost van Woensel & Laurens op 't Zandt) 
+ * @version (version 1)
  */
 public class PersonComparer
 {
+    /**
+     * the comparing of a few different people that are the same in a few different ways, the outputs tell how they are related.
+     */
     public static void main(String[] args)
     {
         Person person1 = new Person(3,7,1993,"Joost","van Woensel",'m',123456789);
