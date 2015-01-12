@@ -31,6 +31,7 @@ public class Checkout
     public void checkoutOrder(Person person)
     {
         double totalPrice = getTotalPriceOfCurrentPerson(person);
+        double discount = 0;
         //Check if the person has a discount card.
         if(person instanceof DiscountCardHolder)
         {
@@ -38,18 +39,18 @@ public class Checkout
             //Check if the discount card has a maximum
             if(discountCardHolder.hasMaximum())
             {
-                double discount = totalPrice * discountCardHolder.giveDiscountPercentage();
+                discount = totalPrice * discountCardHolder.giveDiscountPercentage();
                 //Check if the discounts exceeds the maximum
                 if(discount>discountCardHolder.giveMaximum())
                 {
                     discount = discountCardHolder.giveMaximum();
-                }
-                totalPrice -= discount;
+                }                
             }else
             {
-                totalPrice = totalPrice - (totalPrice*discountCardHolder.giveDiscountPercentage());
+                discount = (totalPrice*discountCardHolder.giveDiscountPercentage());
             }
-
+            totalPrice = totalPrice - discount;
+            System.out.println(person.getFirstName()+" got a discount of "+discount+" euros");
         }
         
         try{
